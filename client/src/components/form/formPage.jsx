@@ -56,7 +56,7 @@ export const FormPage = () => {
   async function handleSubmit() {
     const res = await submitData(formData);
     if( res.errors){
-      console.log(res.errors[0]);
+      console.log(res.errors);
       toast({
         variant: "destructive",
         title: res.errors[0].message,
