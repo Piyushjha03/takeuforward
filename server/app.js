@@ -6,7 +6,7 @@ import prisma from './DB/db.config.js';
 
 const app = express();
 app.use(cors({
-    origin:"*",
+    origin:"https://takeuforward-two.vercel.app",
     }));
 
 app.use(express.json());
