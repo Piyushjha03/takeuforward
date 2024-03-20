@@ -83,7 +83,7 @@ export const FormPage = () => {
                   <Label htmlFor="name">Username</Label>
                   <Input
                     id="username"
-                    placeholder="Name of your project"
+                    placeholder="Enter your username..."
                     onChange={(e) => handleChanege(e)}
                   />
                 </div>
