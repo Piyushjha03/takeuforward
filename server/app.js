@@ -24,13 +24,13 @@ app.post("/submit", async (req, res) => {
     const newEntry = await prisma.Data.create({
       data: output,
     });
-    res.status(200).json({
+    return res.status(200).json({
       message: "user created successfully",
       data: newEntry,
     });
   } catch (error) {
     if (error instanceof errors.E_VALIDATION_ERROR) {
-      res.status(400).json({
+      return res.status(400).json({
         errors: error.messages,
       });
     }
@@ -58,7 +58,7 @@ app.get("/getdata", async (req, res) => {
     const totalEntry = await prisma.Data.count();
     const totalPage = Math.ceil(totalEntry / limit);
 
-    res.status(200).json({
+    return res.status(200).json({
       data: data,
       metadata: {
         totalEntry,
@@ -68,7 +68,7 @@ app.get("/getdata", async (req, res) => {
       },
     });
   } catch (error) {
-    res.status(500).json({
+    return res.status(500).json({
       message: "Internal Server Error",
     });
   }
