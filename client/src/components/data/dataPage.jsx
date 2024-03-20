@@ -27,7 +27,7 @@ import { useNavigate } from "react-router-dom";
 export const DataPage = () => {
   const [allData, setAllData] = useState([]);
   const [metadata, setMetadata] = useState();
-  const [currPage, setCurrPage] = useState(2);
+  const [currPage, setCurrPage] = useState(1);
   const nav=useNavigate()
   useEffect(() => {
     async function x() {
@@ -129,7 +129,7 @@ export const DataPage = () => {
           )}
         </PaginationContent>
       </Pagination>
-      <Button variant="outline" className="absolute bottom-10" onClick={()=>{
+      <Button variant="outline" className="bottom-0 sm:bottom-10 absolute" onClick={()=>{
         nav('/')
       }}>Back to Home</Button>
     </>
