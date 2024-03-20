@@ -3,6 +3,8 @@ import  cors from 'cors'
 import vine, { errors } from '@vinejs/vine'
 import { schema } from './validation/dataValidation.js';
 import prisma from './DB/db.config.js';
+import dotenv from 'dotenv';
+dotenv.config();
 
 const app = express();
 app.use(cors({
