@@ -29,9 +29,7 @@ app.use('/submit',async(req,res)=>{
     } catch (error) {
         if (error instanceof errors.E_VALIDATION_ERROR) {
             res.status(400).json({
-                errors:error.messages.map(message=>{
-                    return message.message
-                })
+                errors:error.messages
             })
     }
 }
