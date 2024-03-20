@@ -15,7 +15,7 @@ app.use(
 
 app.use(express.json());
 
-app.use("/submit", async (req, res) => {
+app.post("/submit", async (req, res) => {
   try {
     const data = req.body;
     const validator = vine.compile(schema);
@@ -37,7 +37,7 @@ app.use("/submit", async (req, res) => {
   }
 });
 
-app.use("/getdata", async (req, res) => {
+app.get("/getdata", async (req, res) => {
   const page = Number(req.query.page) || 1;
   const limit = Number(req.query.limit) || 5;
 
