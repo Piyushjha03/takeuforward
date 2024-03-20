@@ -33,7 +33,6 @@ export const DataPage = () => {
     async function x() {
       const res = await getData(currPage);
       if (res.data) {
-        console.log(res);
         setAllData(res.data);
         setMetadata(res.metadata);
       }

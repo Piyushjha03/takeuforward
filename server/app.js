@@ -28,7 +28,6 @@ app.use('/submit',async(req,res)=>{
         });
     } catch (error) {
         if (error instanceof errors.E_VALIDATION_ERROR) {
-            console.log(error.messages)
             res.status(400).json({
                 errors:error.messages.map(message=>{
                     return message.message
